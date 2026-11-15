@@ -2,15 +2,36 @@
 
 Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
-## Run
+## Quick start — RUN the dashboard locally
+
+**Prerequisite:** Python **3.10+** installed (with `pip`). Open a terminal in the **repository root**, where `requirements.txt` is located.
 
 ```bash
-python main.py
-python main.py --export
-python -m unittest discover -s tests -v
+# Optional but recommended: create an isolated environment
+python -m venv .venv
+
+# Activate it on Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+# On macOS/Linux instead: source .venv/bin/activate
+
+# Install dependencies and start the dashboard
+python -m pip install -r requirements.txt
+python -m streamlit run ui/app.py
 ```
 
-From repository root. Export writes `reports/assessment.json` and `reports/findings.csv`.
+Open the **Local URL** printed by Streamlit (typically `http://localhost:8501`) in your browser. Use the sidebar to explore **Dashboard**, **VM Explorer**, **Risk Findings**, **Remediation**, and **Reports**. To stop the server, press **Ctrl+C** in the terminal.
+
+> **Windows Command Prompt:** use `.venv\Scripts\activate.bat` instead of the PowerShell activation command. If `python` is not recognized on Windows, try `py -3` in its place. The assessment uses **simulated** VM/firewall data; no live cloud accounts or scans are required.
+
+For a guided demonstration, expected outputs, troubleshooting, CLI options, and an explanation of every tab, see **[PROJECT_WALKTHROUGH.md](PROJECT_WALKTHROUGH.md)**.
+
+### Command-line assessment (optional)
+
+```bash
+python main.py            # Print the assessment in the terminal
+python main.py --export   # Also write reports/assessment.json and reports/findings.csv
+python -m unittest discover -s tests -v  # Run regression tests
+```
 
 ## Layout
 
@@ -22,7 +43,7 @@ From repository root. Export writes `reports/assessment.json` and `reports/findi
 - `core/scanner.py`: separate loopback-only TCP connect scanner
 - `core/remediation.py`: copy-based, non-destructive simulated firewall remediation
 - `tests/`: built-in unittest regression/scenario tests
-- `ui/`: reserved for Phase F Streamlit dashboard
+- `ui/`: Phase F Streamlit dashboard and dark-theme styles
 - `data/dataset.xlsx`, `notebooks/`: original scheduling dataset and historical notebook
 
 ## Scope
