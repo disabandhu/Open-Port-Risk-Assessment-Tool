@@ -19,7 +19,7 @@ python -m pip install -r requirements.txt
 python -m streamlit run ui/app.py
 ```
 
-If the Streamlit launch upon running the command - python -m streamlit run ui/app.py, does not open the page then open the **Network URL** printed by Streamlit in your terminal (will look something like 'http://192.168.1.6:8501') in your browser. Use the sidebar to explore **Dashboard**, **VM Explorer**, **Risk Findings**, **Remediation**, and **Reports**. To stop the server, press **Ctrl+C** in the terminal.
+If the Streamlit launch upon running the command - python -m streamlit run ui/app.py, does not open the page then open the **Network URL** printed by Streamlit in your terminal in your browser. Use the sidebar to explore **Dashboard**, **VM Explorer**, **Risk Findings**, **Remediation**, and **Reports**. To stop the server, press **Ctrl+C** in the terminal.
 
 > **Windows Command Prompt:** use `.venv\Scripts\activate.bat` instead of the PowerShell activation command. If `python` is not recognized on Windows, try `py -3` in its place. The assessment uses **simulated** VM/firewall data; no live cloud accounts or scans are required.
 
