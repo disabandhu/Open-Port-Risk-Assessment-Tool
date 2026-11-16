@@ -1,6 +1,6 @@
 # Python-Based Open Port Risk Assessment Tool
 
-<video src="https://raw.githubusercontent.com/disabandhu/Open-Port-Risk-Assessment-Tool/main/assets/demo.mp4" controls autoplay muted playsinline></video>
+<video src="https://raw.githubusercontent.com/disabandhu/Open-Port-Risk-Assessment-Tool/main/assets/demo.mp4" autoplay loop muted playsinline style="width: 100%;"></video>
 
 Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
@@ -8,11 +8,17 @@ Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
 Follow these steps to run the **Open Port Risk Assessment Dashboard** on your computer. No prior experience is required!
 
-### Step 1: Download the Project
+### Step 1: Get the Project on Your Computer
 
-1. Open the **SharePoint link** provided to you.
-2. Download the `open_port_risk_assessment` project folder. If it downloads as a ZIP file, extract it first.
-3. Save the extracted folder somewhere easy to find, such as your **Desktop** or **Downloads** folder.
+1. Install Git from [git-scm.com/downloads](https://git-scm.com/downloads) if it is not already installed.
+2. Open Command Prompt or Terminal and run:
+
+```bash
+git clone https://github.com/disabandhu/Open-Port-Risk-Assessment-Tool.git
+cd Open-Port-Risk-Assessment-Tool
+```
+
+This downloads the repository to your computer and opens the project folder. Continue with Step 2 to install Python.
 
 ### Step 2: Install Python (If Not Already Installed)
 
