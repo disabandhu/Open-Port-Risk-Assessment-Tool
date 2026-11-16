@@ -1,5 +1,7 @@
 # Python-Based Open Port Risk Assessment Tool
 
+<video src="https://raw.githubusercontent.com/disabandhu/Open-Port-Risk-Assessment-Tool/main/assets/demo.mp4" controls autoplay muted playsinline></video>
+
 Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
 ## 🚀 Quick Start — How to Run the Dashboard Locally
