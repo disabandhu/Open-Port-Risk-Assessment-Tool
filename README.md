@@ -2,24 +2,170 @@
 
 Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
-## Quick start — RUN the dashboard locally
+## 🚀 Quick Start — How to Run the Dashboard Locally
 
-**Prerequisite:** Python **3.10+** installed (with `pip`). Open a terminal in the **repository root**, where `requirements.txt` is located.
+Follow these steps to run the **Open Port Risk Assessment Dashboard** on your computer. No prior experience is required!
+
+### Step 1: Download the Project
+
+1. Open the **SharePoint link** provided to you.
+2. Download the `open_port_risk_assessment` project folder. If it downloads as a ZIP file, extract it first.
+3. Save the extracted folder somewhere easy to find, such as your **Desktop** or **Downloads** folder.
+
+### Step 2: Install Python (If Not Already Installed)
+
+1. Download Python from [python.org/downloads](https://www.python.org/downloads/).
+2. Install **Python 3.10 or newer**.
+3. **Windows users:** During installation, enable **"Add Python to PATH"** if the installer offers this option.
+4. Open Command Prompt or Terminal and enter:
 
 ```bash
-# Optional but recommended: create an isolated environment
+python --version
+```
+
+If a Python version appears (for example, `Python 3.11.9`), you're ready!
+
+### Step 3: Open the Project Folder in a Terminal
+
+**For Windows users:**
+
+1. Open the downloaded `open_port_risk_assessment` folder.
+2. Click the address bar at the top of File Explorer.
+3. Type `cmd` and press **Enter**.
+4. A Command Prompt window will open directly inside your project folder.
+
+**For macOS/Linux users:**
+
+Open Terminal and navigate to the extracted project folder using the `cd` command.
+
+**Important:** Make sure you're inside the folder containing `requirements.txt`. You do not need to run `cd open_port_risk_assessment` if you opened the terminal directly inside that folder.
+
+### Step 4: Create a Virtual Environment (Optional but Recommended)
+
+In the terminal, enter:
+
+```bash
 python -m venv .venv
+```
 
-# Activate it on Windows (PowerShell):
+This creates an isolated environment for the project.
+
+**Windows (Command Prompt):**
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+**Windows (PowerShell):**
+
+```powershell
 .venv\Scripts\Activate.ps1
-# On macOS/Linux instead: source .venv/bin/activate
+```
 
-# Install dependencies and start the dashboard
+**macOS/Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+Once activated, you should see `(.venv)` at the beginning of your terminal line.
+
+### Step 5: Install Required Libraries
+
+Copy and paste this command into the terminal:
+
+```bash
 python -m pip install -r requirements.txt
+```
+
+Press **Enter** and wait until installation finishes. This may take a few minutes.
+
+You only need to install these dependencies once per virtual environment.
+
+### Step 6: Start the Dashboard
+
+Run the following command:
+
+```bash
 python -m streamlit run ui/app.py
 ```
 
-If the Streamlit launch upon running the command - python -m streamlit run ui/app.py, does not open the page then open the **Network URL** printed by Streamlit in your terminal in your browser. Use the sidebar to explore **Dashboard**, **VM Explorer**, **Risk Findings**, **Remediation**, and **Reports**. To stop the server, press **Ctrl+C** in the terminal.
+Press **Enter**.
+
+Streamlit will start the application and should automatically open the dashboard in your default web browser.
+
+### Step 7: Open the Dashboard
+
+If your browser doesn't open automatically:
+
+1. Look at the terminal window.
+2. Find the **Local URL**, usually:
+
+   `http://localhost:8501`
+
+   If it doesn't work try the **Network URL**
+
+3. Copy the URL and paste it into your browser.
+
+**Congratulations! 🎉 Your Open Port Risk Assessment Dashboard should now be running.**
+
+### Step 8: Explore the Dashboard
+
+Use the sidebar to navigate between different sections:
+
+| Tab | What It Does |
+|---|---|
+| **Dashboard** | Provides an overview of the port risk assessment results. |
+| **VM Explorer** | Lets you explore virtual machines and their detected open ports. |
+| **Risk Findings** | Displays identified security risks and their severity levels. |
+| **Remediation** | Provides recommendations for addressing identified risks. |
+| **Reports** | Lets you view assessment reports and available reporting options. |
+
+### Step 9: Stop the Application
+
+When you're finished:
+
+1. Return to the terminal where Streamlit is running.
+2. Press **Ctrl + C**.
+3. The application will stop.
+
+---
+
+### ⚠️ Common Problems and Solutions
+
+**Problem: `python` is not recognized**
+
+Python may not be installed or added to your system PATH. Install Python and restart your terminal. On Windows, you can also try `py` instead of `python`.
+
+**Problem: `No module named streamlit`**
+
+Make sure your virtual environment is activated, then run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+**Problem: `File does not exist: ui/app.py`**
+
+You are probably in the wrong directory. Make sure your terminal is inside the `open_port_risk_assessment` folder containing `requirements.txt` and the `ui` folder.
+
+**Problem: The dashboard doesn't open automatically**
+
+Copy the **Local URL** displayed in the terminal and open it manually in your browser.
+
+**Problem: Port 8501 is already in use**
+
+Run the dashboard using a different port:
+
+```bash
+python -m streamlit run ui/app.py --server.port 8502
+```
+
+Then open `http://localhost:8502` in your browser.
+
+---
+
+**Note:** Keep the terminal window open while using the dashboard. Closing it will stop the application.
 
 > **Windows Command Prompt:** use `.venv\Scripts\activate.bat` instead of the PowerShell activation command. If `python` is not recognized on Windows, try `py -3` in its place. The assessment uses **simulated** VM/firewall data; no live cloud accounts or scans are required.
 
