@@ -1,6 +1,6 @@
 # Python-Based Open Port Risk Assessment Tool
 
-<video src="https://raw.githubusercontent.com/disabandhu/Open-Port-Risk-Assessment-Tool/main/assets/demo.mp4" autoplay loop muted playsinline style="width: 100%;"></video>
+## 🎥 Demo video is here: [Watch the MP4](assets/demo.mp4)
 
 Refactored Phase E project. Runs on Python **3.10+** without Colab.
 
